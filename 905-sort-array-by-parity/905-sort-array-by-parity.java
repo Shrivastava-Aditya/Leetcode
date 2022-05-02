@@ -1,24 +1,16 @@
 class Solution {
     public int[] sortArrayByParity(int[] nums) {
-        int fp = 0;
-        int sp = 0;
         
-        while(sp < nums.length && fp <= sp){
-            if(isEven(nums[fp])){
-                fp++;sp++;
+        int i=0,j=nums.length-1;
+        
+        while(i < j){
+            if(nums[i] % 2 > nums[j] % 2){
+                int temp = nums[j];
+                nums[j] = nums[i];
+                nums[i] = temp;
             }
-            else if(!isEven(nums[fp]) && sp<nums.length){
-                while(!isEven(nums[sp]) && sp < nums.length-1){
-                    // if(sp >= nums.length || fp >= nums.length) break;
-                    sp++;
-                }
-                int temp = nums[fp];
-                nums[fp] = nums[sp];
-                nums[sp] = temp;
-                fp++;
-            
-            }
-            
+            if(isEven(nums[i])) i++;
+            if(!isEven(nums[j])) j--;
         }
         return nums;
         
