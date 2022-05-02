@@ -3,7 +3,7 @@ class Solution {
         int fp = 0;
         int sp = 0;
         
-        while(sp < nums.length && fp<nums.length){
+        while(sp < nums.length && fp <= sp){
             if(isEven(nums[fp])){
                 fp++;sp++;
             }
