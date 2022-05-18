@@ -51,11 +51,10 @@ class Solution{
                 high = mid - 1;
             }
             else{
-                flor = mid;
                 low = mid + 1;
             }
         }
-        return flor;
+        return mid;
     }
     
 }
