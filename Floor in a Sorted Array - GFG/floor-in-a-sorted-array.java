@@ -40,8 +40,9 @@ class Solution{
     {
         int low = 0, high = arr.length-1;
         int mid = -1;
-        int flor = -1;
+        //base case for x lower than arr[0]
         if(arr[0] > x) return mid;
+        //things to remember in this question is just the position of end/high variable and how to move it
         while(low <= high){
             mid = low + (high - low) / 2;
             if(arr[mid] == x){
