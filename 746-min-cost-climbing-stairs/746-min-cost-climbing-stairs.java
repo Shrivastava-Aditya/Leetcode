@@ -57,6 +57,7 @@ class Solution {
         
         int topDownAnswer = Math.min(topDown(cost,dp,n-1),topDown(cost,dp,n-2));
         int bottomUpAnswer = bottomUp(cost,n);
+        int constantSpaceAns = o1(cost,n);
         
         
         return bottomUpAnswer;
