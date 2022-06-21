@@ -32,6 +32,24 @@ class Solution {
         return Math.min(dp[index-1],dp[index-2]);
     }
     
+    
+    public int o1(int[] cost,int index){
+      
+        // int[] dp = new int[index+1];
+        
+        int prev1 = cost[0];
+        int prev2 = cost[1];
+        // int next = cost[2]+Math.min(prev1,prev2);
+                                    
+        
+        for(int i=3;i<index;i++){
+            prev1 = cost[i]+Math.min(prev1,prev2);
+            prev2 = prev1;
+            
+        }
+        return Math.min(prev1,prev2);
+    }
+    
     public int minCostClimbingStairs(int[] cost) {
         int n = cost.length;
         
@@ -43,7 +61,9 @@ class Solution {
         
         return bottomUpAnswer;
     }
-     /*
+    
+    
+    /*
      
      solution is in dp in fibonacci pattern 
      if(n ==  0 || 1) return cost[n]
@@ -61,4 +81,5 @@ class Solution {
      }
         
     */
+    
 }
