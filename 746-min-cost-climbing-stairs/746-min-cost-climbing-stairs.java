@@ -42,9 +42,10 @@ class Solution {
         // int next = cost[2]+Math.min(prev1,prev2);
                                     
         
-        for(int i=3;i<index;i++){
-            prev1 = cost[i]+Math.min(prev1,prev2);
-            prev2 = prev1;
+        for(int i=2;i<index;i++){
+            int next = cost[i]+Math.min(prev1,prev2);
+            prev1 = prev2;
+            prev2 = next;
             
         }
         return Math.min(prev1,prev2);
@@ -60,7 +61,7 @@ class Solution {
         int constantSpaceAns = o1(cost,n);
         
         
-        return bottomUpAnswer;
+        return constantSpaceAns;
     }
     
     
