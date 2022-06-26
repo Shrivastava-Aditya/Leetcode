@@ -49,7 +49,7 @@ class Solution{
         
         for(int i=0;i<n;i++){
             sum += arr[i];
-            if(sum == 0 || hs.contains(sum)) return true;
+            if(arr[i] == 0 || sum == 0 || hs.contains(sum)) return true;
             hs.add(sum);
         }
         return false;
