@@ -29,15 +29,18 @@ class GFG {
 class Solution {
     static int canReach(int[] A, int N) {
        
+       //if the length is 1
       if(N==1) return 1;
       
+      //initialising curStep and hop variable
       int curStep = A[0];
       int i = 0;
       
+      //while step next step to be taken is not zero, and hop count is < N
       while(curStep!= 0 && i < N){
-          curStep--;
-          curStep = Math.max(A[i],curStep);
-          i++;
+          curStep--; // decrement the step by 1 for index setting
+          curStep = Math.max(A[i],curStep); // set the next step = Max(next element at hopped index, this step)
+          i++; // increment hop by 1
       }
       if(i == N) return 1;
       
