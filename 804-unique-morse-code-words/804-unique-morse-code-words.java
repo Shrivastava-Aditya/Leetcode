@@ -6,11 +6,11 @@ class Solution {
         
         
         for(String word : words){
-            StringBuilder sb = new StringBuilder();
+            String tmp = "";
             for(char letter : word.toCharArray()){
-                sb.append(morse[letter-'a']);
+                tmp+=morse[letter-'a'];
             }
-            code.add(sb.toString());
+            code.add(tmp);
         }
         return code.size();
     }
